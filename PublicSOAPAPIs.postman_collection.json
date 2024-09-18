@@ -1,0 +1,989 @@
+{
+	"info": {
+		"_postman_id": "3f801c77-02fe-4e84-a1f8-66d5d1379d59",
+		"name": "Public SOAP APIs",
+		"description": "This is a collection of different SOAP APIs that are completley public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about by seeing the many different ways in which APIs can be used.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37959041"
+	},
+	"item": [
+		{
+			"name": "Numbers",
+			"item": [
+				{
+					"name": "NumberToWords",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n      <ubiNum>500</ubiNum>\n    </NumberToWords>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+							"protocol": "https",
+							"host": [
+								"www",
+								"dataaccess",
+								"com"
+							],
+							"path": [
+								"webservicesserver",
+								"NumberConversion.wso"
+							]
+						},
+						"description": "Returns the word corresponding to the positive number passed as parameter. Limited to quadrillions."
+					},
+					"response": []
+				},
+				{
+					"name": "NumberToDollars",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <NumberToDollars xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n      <dNum>500</dNum>\n    </NumberToDollars>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+							"protocol": "https",
+							"host": [
+								"www",
+								"dataaccess",
+								"com"
+							],
+							"path": [
+								"webservicesserver",
+								"NumberConversion.wso"
+							]
+						},
+						"description": "Returns the non-zero dollar amount of the passed number."
+					},
+					"response": []
+				}
+			],
+			"description": "Some basic numbers requests."
+		},
+		{
+			"name": "Calculator",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n      <ubiNum>500</ubiNum>\n    </NumberToWords>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+							"protocol": "https",
+							"host": [
+								"www",
+								"dataaccess",
+								"com"
+							],
+							"path": [
+								"webservicesserver",
+								"NumberConversion.wso"
+							]
+						},
+						"description": "Adds two integers."
+					},
+					"response": []
+				},
+				{
+					"name": "NumberToDollars",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <NumberToDollars xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n      <dNum>500</dNum>\n    </NumberToDollars>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+							"protocol": "https",
+							"host": [
+								"www",
+								"dataaccess",
+								"com"
+							],
+							"path": [
+								"webservicesserver",
+								"NumberConversion.wso"
+							]
+						},
+						"description": "Returns the non-zero dollar amount of the passed number."
+					},
+					"response": []
+				},
+				{
+					"name": "Divide",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/Divide",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Divide xmlns=\"http://tempuri.org/\">\n      <intA>5</intA>\n      <intB>5</intB>\n    </Divide>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://www.dneonline.com/calculator.asmx",
+							"protocol": "http",
+							"host": [
+								"www",
+								"dneonline",
+								"com"
+							],
+							"path": [
+								"calculator.asmx"
+							]
+						},
+						"description": "Divides two integers."
+					},
+					"response": []
+				},
+				{
+					"name": "Multiply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/Multiply",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Multiply xmlns=\"http://tempuri.org/\">\n      <intA>5</intA>\n      <intB>5</intB>\n    </Multiply>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://www.dneonline.com/calculator.asmx",
+							"protocol": "http",
+							"host": [
+								"www",
+								"dneonline",
+								"com"
+							],
+							"path": [
+								"calculator.asmx"
+							]
+						},
+						"description": "Multiplies two integers."
+					},
+					"response": []
+				},
+				{
+					"name": "Subtract",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/Subtract",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Subtract xmlns=\"http://tempuri.org/\">\n      <intA>5</intA>\n      <intB>5</intB>\n    </Subtract>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://www.dneonline.com/calculator.asmx",
+							"protocol": "http",
+							"host": [
+								"www",
+								"dneonline",
+								"com"
+							],
+							"path": [
+								"calculator.asmx"
+							]
+						},
+						"description": "Subtracts two integers."
+					},
+					"response": []
+				}
+			],
+			"description": "A simple SOAP API calculator.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Continents",
+			"item": [
+				{
+					"name": "List of Continents by Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <ListOfContinentsByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n    </ListOfContinentsByName>\n  </soap12:Body>\n</soap12:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns a list of continents ordered by name."
+					},
+					"response": []
+				}
+			],
+			"description": "Some weather APIs for the United States.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "List of Countries by Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <ListOfCountryNamesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n    </ListOfCountryNamesByName>\n  </soap12:Body>\n</soap12:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns a list of countries ordered by name."
+					},
+					"response": []
+				},
+				{
+					"name": "Captial City for a Country",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <CapitalCity xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n      <sCountryISOCode>US</sCountryISOCode>\n    </CapitalCity>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns the name of the captial city for the passed country code."
+					},
+					"response": []
+				},
+				{
+					"name": "Currency for a Country",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <CountryCurrency xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n      <sCountryISOCode>US</sCountryISOCode>\n    </CountryCurrency>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns the currency ISO code and name for the passed country ISO code."
+					},
+					"response": []
+				},
+				{
+					"name": "Flag for a Country",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <CountryFlag xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n      <sCountryISOCode>US</sCountryISOCode>\n    </CountryFlag>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns a link to a picture of the country flag"
+					},
+					"response": []
+				},
+				{
+					"name": "International Phone Code for a Country Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <CountryIntPhoneCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n      <sCountryISOCode>US</sCountryISOCode>\n    </CountryIntPhoneCode>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns the internation phone code for the passed ISO country code."
+					},
+					"response": []
+				}
+			],
+			"description": "Country SOAP APIs.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Currencies",
+			"item": [
+				{
+					"name": "List of Currencies by Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <ListOfCurrenciesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n    </ListOfCurrenciesByName>\n  </soap12:Body>\n</soap12:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns a list of currencies ordered by name."
+					},
+					"response": []
+				}
+			],
+			"description": "Returns a list of currencies ordered by name.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Languages",
+			"item": [
+				{
+					"name": "List of Languages by Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ListOfLanguagesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\n    </ListOfLanguagesByName>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"oorsprong",
+								"org"
+							],
+							"path": [
+								"websamples.countryinfo",
+								"CountryInfoService.wso"
+							]
+						},
+						"description": "Returns an array of languages ordered by name."
+					},
+					"response": []
+				}
+			],
+			"description": "SOAP APIs for languages around the world.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Book ISBN Numbers",
+			"item": [
+				{
+					"name": "Is Valid ISBN13 Number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is XML\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains IsValidISBN13Result\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"IsValidISBN13Result\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"ISBN13 validation result is true\", function () {\r",
+									"    var responseJson = xml2Json(pm.response.text());\r",
+									"    pm.expect(responseJson['soap:Envelope']['soap:Body']['m:IsValidISBN13Response']['m:IsValidISBN13Result']).to.eql(\"true\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Length header exists\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Length\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"No errors in response\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(\"Error\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains valid XML structure\", function () {\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"<?xml\");\r",
+									"    pm.expect(responseText).to.include(\"<soap:Envelope\");\r",
+									"    pm.expect(responseText).to.include(\"<soap:Body\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response contains correct ISBN\", function () {\r",
+									"    var responseJson = xml2Json(pm.response.text());\r",
+									"    pm.expect(responseJson['soap:Envelope']['soap:Body']['m:IsValidISBN13Response']['m:IsValidISBN13Result']).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check for important headers\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>978-1-4612-9090-2</sISBN>\n    </IsValidISBN13>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"daehosting",
+								"com"
+							],
+							"path": [
+								"services",
+								"isbnservice.wso"
+							]
+						},
+						"description": "The test is done by calculation on the first 12 digits and compare the result with the checksum number at the end. You have to pass a 13 digits number."
+					},
+					"response": []
+				},
+				{
+					"name": "Is Valid ISBN10 Number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// 1. Проверка статус-кода 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// 2. Проверка заголовка Content-Type на наличие XML\r",
+									"pm.test(\"Content-Type is XML\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");\r",
+									"});\r",
+									"\r",
+									"// 3. Проверка наличия элемента IsValidISBN10Result в ответе\r",
+									"pm.test(\"Response contains IsValidISBN10Result\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"IsValidISBN10Result\");\r",
+									"});\r",
+									"\r",
+									"// 4. Проверка, что результат валидации ISBN10 равен true\r",
+									"pm.test(\"ISBN10 validation result is true\", function () {\r",
+									"    var responseJson = xml2Json(pm.response.text());\r",
+									"    pm.expect(responseJson['soap:Envelope']['soap:Body']['m:IsValidISBN10Response']['m:IsValidISBN10Result']).to.eql(\"true\");\r",
+									"});\r",
+									"\r",
+									"// 5. Проверка времени ответа (менее 1000 мс)\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"\r",
+									"// 6. Проверка наличия заголовка Content-Length\r",
+									"pm.test(\"Content-Length header exists\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Length\");\r",
+									"});\r",
+									"\r",
+									"// 7. Проверка, что в ответе нет ошибок\r",
+									"pm.test(\"No errors in response\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(\"Error\");\r",
+									"});\r",
+									"\r",
+									"// 8. Проверка структуры XML-ответа\r",
+									"pm.test(\"Response contains valid XML structure\", function () {\r",
+									"    var responseText = pm.response.text();\r",
+									"    pm.expect(responseText).to.include(\"<?xml\");\r",
+									"    pm.expect(responseText).to.include(\"<soap:Envelope\");\r",
+									"    pm.expect(responseText).to.include(\"<soap:Body\");\r",
+									"});\r",
+									"\r",
+									"// 9. Проверка, что ответ содержит правильный ISBN\r",
+									"pm.test(\"Response contains correct ISBN\", function () {\r",
+									"    var responseJson = xml2Json(pm.response.text());\r",
+									"    pm.expect(responseJson['soap:Envelope']['soap:Body']['m:IsValidISBN10Response']['m:IsValidISBN10Result']).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									"// 10. Проверка наличия важных заголовков (например, Content-Type)\r",
+									"pm.test(\"Check for important headers\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN10 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>0-19-852663-6</sISBN>\n    </IsValidISBN10>\n  </soap:Body>\n</soap:Envelope>"
+						},
+						"url": {
+							"raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+							"protocol": "http",
+							"host": [
+								"webservices",
+								"daehosting",
+								"com"
+							],
+							"path": [
+								"services",
+								"isbnservice.wso"
+							]
+						},
+						"description": "The test is done by calculation on the first 9 digits and compare the result with the checksum number at the end. You have to pass a 10 digits number or 8 digits and an X."
+					},
+					"response": []
+				}
+			],
+			"description": "SOAP APIs for book ISBN numbers.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Temperature",
+			"item": [
+				{
+					"name": "Celsius to Farenheit Conversion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <CelsiusToFahrenheit xmlns=\"https://www.w3schools.com/xml/\">\n      <Celsius>20</Celsius>\n    </CelsiusToFahrenheit>\n  </soap12:Body>\n</soap12:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.w3schools.com/xml/tempconvert.asmx",
+							"protocol": "https",
+							"host": [
+								"www",
+								"w3schools",
+								"com"
+							],
+							"path": [
+								"xml",
+								"tempconvert.asmx"
+							]
+						},
+						"description": "Converts celsius temperature to farenheit."
+					},
+					"response": []
+				},
+				{
+					"name": "Farenheit to Celsius Conversion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap12:Body>\n    <FahrenheitToCelsius xmlns=\"https://www.w3schools.com/xml/\">\n      <Fahrenheit>75</Fahrenheit>\n    </FahrenheitToCelsius>\n  </soap12:Body>\n</soap12:Envelope>"
+						},
+						"url": {
+							"raw": "https://www.w3schools.com/xml/tempconvert.asmx",
+							"protocol": "https",
+							"host": [
+								"www",
+								"w3schools",
+								"com"
+							],
+							"path": [
+								"xml",
+								"tempconvert.asmx"
+							]
+						},
+						"description": "Converts farenheit temperature to celsius."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://openlibrary.org/api/books?bibkeys=ISBN:9780134093413&format=json&jscmd=data\n",
+					"protocol": "https",
+					"host": [
+						"openlibrary",
+						"org"
+					],
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "bibkeys",
+							"value": "ISBN:9780134093413"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "jscmd",
+							"value": "data\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
